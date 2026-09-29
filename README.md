@@ -16,7 +16,7 @@ The annotations are therefore structured at page level:
 The script uses the ALTO line information to redefine the dataset at
 line level.
 
-## What does the script do?
+## What does the script do
 
 Starting from:
 
@@ -40,14 +40,6 @@ the script:
 6. creates a new line-level COCO dataset;
 7. generates debug images to check that the polygons were transferred correctly.
 
-## Why is this necessary?
-
-The original annotations are created on complete manuscript pages.
-
-For training letter-level instance segmentation models, however, it can be
-more useful to work with cropped text lines, where individual letters occupy
-a larger portion of the image.
-
 The script therefore transforms:
 
 ```text
@@ -62,11 +54,9 @@ cropped text lines + line-level letter polygons
 
 without manually annotating the lines again.
 
-## How are the annotations transferred?
+## How are the annotations transferred
 
-The ALTO file provides the position of each text line.
-
-Each letter annotation is first assigned to a line using its position
+The ALTO file provides the position of each text line. Each letter annotation is first assigned to a line using its position
 relative to the ALTO baselines.
 
 Once the line is cropped, the polygon coordinates are recalculated relative
